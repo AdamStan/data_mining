@@ -7,16 +7,17 @@ protocol_start = ("http:", "https:")
 def find_links_in_text(text, url):
     soup = BeautifulSoup(text, 'html.parser')
     index_of_last_slash = url.rfind("/")
-    index_of_hash_section = url.rfind("#")
     links = set()
 
     for link in soup.find_all('a'):
         link_base = link.get('href')
-        logging.warning("Url: " + url)
 
         if link_base is None or len(link_base) == 0:
             continue
-        elif link_base[0] == "#":
+
+        index_of_hash_section = link_base.rfind("#")
+
+        if index_of_hash_section != -1:
             # link_base = url + link_base
             continue
         elif not link_base.startswith(protocol_start):
