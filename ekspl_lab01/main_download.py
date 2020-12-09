@@ -1,9 +1,9 @@
 import sys
 import requests
 
-from email_finder import read_emails_from_download
 from io_functions import remove_download_directory, create_download_directory
 from going_through_links import go_to_links_with_depth
+
 
 html_link = sys.argv[1]
 depth = int(sys.argv[2])
@@ -13,5 +13,3 @@ remove_download_directory()
 create_download_directory()
 
 go_to_links_with_depth(html_link, depth)
-
-print(read_emails_from_download())
