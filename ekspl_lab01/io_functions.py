@@ -34,3 +34,11 @@ def create_download_directory():
 
 def list_download_directory():
     return os.listdir(DOWNLOAD_DIR)
+
+
+def write_emails_to_csv(emails, file_name):
+    file = open(os.path.join(FILE_PARENT_NAME, file_name + ".csv"), "w", encoding="utf-8")
+    for email in emails:
+        file.write(email)
+        file.write("\n")
+    file.close()

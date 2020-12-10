@@ -12,7 +12,10 @@ def go_to_links(links):
     for html_link in links:
         logging.info("HTML link: " + html_link)
         if html_link not in links_discovered:
-            html_text = requests.get(html_link).text
+            try:
+                html_text = requests.get(html_link).text
+            except Exception:
+                logging.info("Cannot get to: " + str(html_link))
 
             links_discovered.add(html_link)
             soup = BeautifulSoup(html_text, 'html.parser')
