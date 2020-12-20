@@ -1,0 +1,6 @@
+/venv/
+/downloads/
+/.idea/
+/venv-global
+/__pycache__
+emails.csv
