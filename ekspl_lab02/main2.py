@@ -14,4 +14,13 @@ remove_download_directory(download_dir=DOWNLOAD_DIR)
 create_download_directory(download_dir=DOWNLOAD_DIR)
 
 downloader = DownloadPages(DOWNLOAD_DIR)
-downloader.go_to_links_with_depth(html_link, 1)
+links_discovered = downloader.go_to_links_with_depth(html_link, 1)
+
+print(links_discovered)
+# find all ngrams with duplicates
+
+# count them
+
+# save in downloads as for example ngrams1.txt
+
+# find 3 najbardziej podobne strony (adresy url) z bazy danych do strony podanej na wejsciu

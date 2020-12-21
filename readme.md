@@ -3,7 +3,7 @@
 Every module has its own main file.
 
 In modules are readme files, which describe how to run every module.
-You can't download module separately.
+Modules should works separately.
 
 # Virtual environment
 
