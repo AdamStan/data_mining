@@ -9,6 +9,7 @@ class DownloadPages:
     def __init__(self, download_dir):
         self.download_dir = download_dir
         self.links_discovered = list()
+        self.links_to_html_pages = dict()
 
     def go_to_links(self, links):
         new_links = set()
@@ -25,7 +26,9 @@ class DownloadPages:
                 soup = BeautifulSoup(html_text, 'html.parser')
                 links = find_links_in_text(html_text, html_link)
                 new_links.update(links)
-                write_text_to_file_in_download(soup.get_text(), str(len(self.links_discovered)) + ".txt", self.download_dir)
+                file_name = str(len(self.links_discovered)) + ".txt"
+                write_text_to_file_in_download(soup.get_text(), file_name, self.download_dir)
+                self.links_to_html_pages[file_name] = html_link
             else:
                 logging.info("HTML link was discovered!")
 
@@ -38,4 +41,4 @@ class DownloadPages:
             logging.warning("depth: " + str(i))
             links_to_discover = self.go_to_links(links_to_discover)
 
-        return self.links_discovered
+        return self.links_to_html_pages

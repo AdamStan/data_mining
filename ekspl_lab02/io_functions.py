@@ -1,4 +1,5 @@
 import os
+import csv
 from pathlib import Path
 import logging
 
@@ -9,6 +10,14 @@ DOWNLOAD_DIR = os.path.join(str(FILE_PARENT_NAME), "downloads")
 def write_text_to_file_in_download(text, file_name, download_dir=DOWNLOAD_DIR):
     file = open(os.path.join(download_dir, file_name), "w", encoding="utf-8")
     file.write(text)
+    file.close()
+
+
+def write_dict_to_csv_file_in_download(dictionary, file_name, download_dir=DOWNLOAD_DIR):
+    file = open(os.path.join(download_dir, file_name + ".csv"), "w", encoding="utf-8")
+    writer = csv.writer(file)
+    for key, val in dictionary.items():
+        writer.writerow([key, val])
     file.close()
 
 

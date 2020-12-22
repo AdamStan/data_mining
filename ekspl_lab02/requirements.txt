@@ -1,3 +1,4 @@
 requests~=2.22.0
 beautifulsoup4~=4.8.1
 lxml~=4.6.2
+scikit-learn~=0.23.2

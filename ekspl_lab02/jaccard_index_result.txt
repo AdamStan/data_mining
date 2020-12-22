@@ -1,0 +1,3 @@
+https://github.com/python/cpython/blob/master/Doc/library/email.examples.rst
+https://docs.python.org/3/library/email.contentmanager.html
+https://docs.python.org/3/library/email.html
