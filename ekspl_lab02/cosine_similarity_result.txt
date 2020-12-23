@@ -1,0 +1,3 @@
+https://docs.python.org/3/library/email.compat32-message.html
+https://docs.python.org/3/library/email.html
+https://docs.python.org/3/library/email.contentmanager.html

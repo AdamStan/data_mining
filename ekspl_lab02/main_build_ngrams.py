@@ -1,8 +1,9 @@
 import os
 from pathlib import Path
 
+from ekspl_lab02.cosine_similarity_example import get_cosine
 from ekspl_lab02.io_functions import write_dict_to_csv_file_in_download, write_text_to_file_in_download
-from ekspl_lab02.similarity import jaccard_the_bests_results
+from ekspl_lab02.similarity import jaccard_the_bests_results, cosine_the_best_results
 
 from ekspl_lab02.ngrams import ContentReader, NGramsFinder, find_n_grams, count_n_grams
 
@@ -43,4 +44,6 @@ print(three_the_best_results)
 
 ### TODO: using bag of words
 
-### TODO: using consine distance
+### using consine distance
+results_dict = cosine_the_best_results(file_name_and_ngrams_with_count, ngrams_from_link)
+print(results_dict)
