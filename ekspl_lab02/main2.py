@@ -1,12 +1,12 @@
 import sys
 
-from ekspl_lab02.download import FILE_PARENT_NAME, DOWNLOAD_DIR
-from ekspl_lab02.going_through_links import DownloadPages
+from download import FILE_PARENT_NAME, DOWNLOAD_DIR
+from going_through_links import DownloadPages
 
-from ekspl_lab02.io_functions import write_dict_to_csv_file_in_download, write_text_to_file_in_download, \
+from io_functions import write_dict_to_csv_file_in_download, write_text_to_file_in_download, \
                                      remove_download_directory, create_download_directory
-from ekspl_lab02.similarity import jaccard_the_bests_results, cosine_the_best_results
-from ekspl_lab02.ngrams import ContentReader, NGramsFinder, find_n_grams, count_n_grams
+from similarity import jaccard_the_bests_results, cosine_the_best_results
+from ngrams import ContentReader, NGramsFinder, find_n_grams, count_n_grams
 
 # checking arguments
 if len(sys.argv) < 2:
