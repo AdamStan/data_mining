@@ -4,7 +4,7 @@ import math
 def jaccard_similarity(list1, list2):
     s1 = set(list1)
     s2 = set(list2)
-    return float(len(s1.intersection(s2)) / len(s1.union(s2)))
+    return len(s1.intersection(s2)) / len(s1.union(s2))
 
 
 def jaccard_the_bests_results(file_name_and_ngrams_with_count, ngrams_from_link, n_bests=3):
