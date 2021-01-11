@@ -4,10 +4,14 @@
 # conda install flask
 # Uruchomienie serwera:
 # FLASK_APP=app.py FLASK_ENV=development flask run --port 5000
+from flask import Flask, request
+from flask_cors import CORS
 
 
-from flask import Flask, request, send_from_directory
 app = Flask(__name__)
+app.config['ENV'] = 'development'
+CORS(app)
+
 
 @app.route('/')
 def index():
@@ -17,11 +21,12 @@ def index():
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
     <body>
-        <input type="button" value="Otwórz formularz" onclick="$('#form').load('http://127.0.0.1:5000/form.html')" />
+        <input type="button" value="Otwórz formularz" onclick="$('#form').load('http://127.0.0.1:5000/form.html');" />
         <div id="form"></div>
     </body>
 </html>
     '''
+
 
 @app.route('/form.html')
 def form():
@@ -62,6 +67,7 @@ def form():
 </form>
     '''
 
+
 @app.route('/done.html', methods=['POST'])
 def done():
     data = request.form
@@ -73,3 +79,7 @@ def done():
         return f"Poprawnie wypełniono formularz.<br />{data}"
     else:
         return f"Błędnie wypełniono formularz.<br />{data}"
+
+
+if __name__ == '__main__':
+    app.run()
