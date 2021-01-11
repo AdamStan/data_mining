@@ -3,10 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.expected_conditions import presence_of_element_located
-from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 
-
-PATH = "C:\Program Files\chromedriver_win32\geckodriver.exe"
 #This example requires Selenium WebDriver 3.13 or newer
 with webdriver.Firefox() as driver:
     wait = WebDriverWait(driver, 10)

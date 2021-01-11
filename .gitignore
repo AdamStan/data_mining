@@ -4,3 +4,5 @@
 /venv-global
 /__pycache__
 emails.csv
+geckodriver.log
+downloads
