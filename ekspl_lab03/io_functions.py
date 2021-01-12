@@ -4,6 +4,7 @@ import logging
 
 FILE_PARENT_NAME = Path(os.path.dirname(__file__)).resolve()
 DOWNLOAD_DIR = os.path.join(str(FILE_PARENT_NAME), "downloads")
+DOWNLOAD_IMAGE_DIR = os.path.join(str(FILE_PARENT_NAME), "images")
 
 
 def write_text_to_file_in_download(text, file_name, download_dir=DOWNLOAD_DIR):
